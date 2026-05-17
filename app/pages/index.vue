@@ -1,9 +1,9 @@
 <template>
     <h1>Hello World!</h1>
-    <CTAButton value="Start"/>
-    <CTAButton value="Pause"/>
-    <CTAButton value="Reset"/>
+    <TimerDisplay/>
+    <TimerControls/>
 </template>
 <script setup lang="ts">
-import CTAButton from '@/components/CTAButton.vue'
+import TimerControls from "~/components/TimerControls"
+import TimerDisplay from "~/components/TimerDisplay"
 </script>
