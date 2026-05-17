@@ -1,6 +1,6 @@
 <template>
     <button :class="classes">
-        {{ value }}
+        {{ icons[value] }} {{ value }}
     </button>
 </template>
 <script setup lang="ts">
@@ -14,19 +14,25 @@ const props = defineProps<{
 
 const styles = {
     Start: {
-        base: 'bg-indigo-500 text-white hover:bg-indigo-600',
+        base: 'bg-gray-800 text-white hover:bg-gray-900',
     },
     Pause: {
-        base: 'bg-amber-500 text-white hover:bg-amber-600',
+        base: 'bg-white border solid border-gray-800 hover:border-gray-900',
     },
     Reset: {
-        base: 'bg-red-500 text-white hover:bg-red-600'
+        base: 'bg-gray-800 text-white hover:bg-gray-900'
     }
+} as const
+
+const icons = {
+  Start: '▶',
+  Pause: '⏸',
+  Reset: '↺'
 } as const
 
 const classes = computed(() => {
     return `
-        px-4 px-2 rounded-xl font-medium transition ${styles[props.value].base}
+        px-4 py-2 rounded-xl transition ${styles[props.value].base}
     `
 })
 </script>
