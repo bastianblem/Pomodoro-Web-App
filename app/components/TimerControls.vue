@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-row items-center justify-center gap-4">
+  <div class="flex flex-row flex-wrap items-center justify-center gap-4 sm:gap-6 md:gap-8">
     <CTAButton value="Start" @click="startTimer"/>
     <CTAButton value="Pause" @click="pauseTimer"/>
     <CTAButton value="Reset" @click="clearTimer"/>

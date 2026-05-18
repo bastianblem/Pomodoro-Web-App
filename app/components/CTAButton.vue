@@ -32,7 +32,7 @@ const icons = {
 
 const classes = computed(() => {
     return `
-        px-4 py-2 rounded-xl transition ${styles[props.value].base}
+        px-5 py-3 text-sm sm:text-base rounded-xl transition hover:scale-105 active:scale-95 ${styles[props.value].base}
     `
 })
 </script>

@@ -5,16 +5,12 @@
   --color-bg: #0f172a;
   --color-surface: #111827;
   --color-surface-light: #1f2937;
-
-  --color-secondary: #14b8a6;
-  --color-accent: #f59e0b;
-
-  --color-text: #f8fafc;
-  --color-text-muted: #94a3b8;
-
-  --color-border: #334155;
 }
 
-*{
+html,
+body{
+  margin: 0;
+  padding: 0;
   font-family: "Roboto", "Segoe UI", sans-serif;
+  background: var(--color-bg);
 }
