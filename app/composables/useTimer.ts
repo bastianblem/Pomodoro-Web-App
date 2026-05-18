@@ -21,6 +21,7 @@ const formattedTime = computed(() => {
 
 function startInterval () {
     intervalId.value = window.setInterval(() => {
+        // prevent negative countdown values due to interval timing drift
         if (secondsLeft.value <= 0) {
             handleTimerEnd()
             return
@@ -29,6 +30,7 @@ function startInterval () {
         secondsLeft.value--
     }, 1000)
 }
+// stops timer to prevent multiple intervals running in parallel
 function stopInterval () {
     if(intervalId.value !== null) {
         clearInterval(intervalId.value)
@@ -66,7 +68,7 @@ function clearTimer() {
 function switchMode() {
     mode.value = mode.value === "focus" ? "break" : "focus"
 }
-
+// mode controls duration (focus = 25min, break = 5min)
 function applyModeTime() {
     secondsLeft.value =
         mode.value === "focus"
